@@ -1,0 +1,93 @@
+.xtx-carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    .carousel {
+      &-body {
+        width: 100%;
+        height: 100%;
+      }
+      &-item {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        transition: opacity 0.5s linear;
+        &.fade {
+          opacity: 1;
+          z-index: 1;
+        }
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      &-indictor {
+        position: absolute;
+        left: 0;
+        bottom: 0px;
+        z-index: 2;
+        @media (max-width: 500px) {
+          width: 100%;
+        }
+        width: 750px;
+        text-align: center;
+        span {
+          display: inline-block;
+          width: 12px;
+          height: 12px;
+          background: rgba(0, 0, 0, 0.4);
+          border-radius: 50%;
+          cursor: pointer;
+          ~ span {
+            // span中的每个span
+            margin-left: 12px;
+          }
+          &.active {
+            background: #fff;
+          }
+        }
+      }
+      &-btn {
+        width: 44px;
+        height: 44px;
+        color: #fff;
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 50%;
+        position: absolute;
+        top: 228px;
+        z-index: 2;
+        text-align: center;
+        line-height: 44px;
+        opacity: 0;
+        transition: all 0.5s;
+        @media (max-width: 500px) {
+          top: 110px;
+        }
+        &.pre {
+          left: 20px;
+          @media (max-width: 500px) {
+            left: 10px;
+          }
+        }
+        &.next {
+          right: 20px;
+          @media (max-width: 500px) {
+            right: 10px;
+          }
+        }
+      }
+      &:hover {
+        .carousel-btn {
+          opacity: 1;
+        }
+      }
+    }
+    &:hover {
+      .carousel-btn {
+        opacity: 1;
+      }
+    }
+  }
